@@ -146,9 +146,9 @@ function updateSummary() {
     
     const totalBalance = totalIncome - totalExpenses;
     
-    document.getElementById('totalIncome').textContent = `$Rs{totalIncome.toFixed(2)}`;
-    document.getElementById('totalExpenses').textContent = `$Rs{totalExpenses.toFixed(2)}`;
-    document.getElementById('totalBalance').textContent = `$Rs{totalBalance.toFixed(2)}`;
+    document.getElementById('totalIncome').textContent = `$${totalIncome.toFixed(2)}`;
+    document.getElementById('totalExpenses').textContent = `$${totalExpenses.toFixed(2)}`;
+    document.getElementById('totalBalance').textContent = `$${totalBalance.toFixed(2)}`;
     
     // Update balance color
     const balanceElement = document.getElementById('totalBalance');
@@ -187,7 +187,7 @@ function displayTransactions(filteredTransactions = null) {
                     <p><strong>Date:</strong> ${formatDate(transaction.date)} | <strong>Method:</strong> ${paymentMethodName}</p>
                 </div>
                 <div class="transaction-amount ${transaction.type}">
-                    ${transaction.type === 'income' ? '+' : '-'}$Rs{transaction.amount.toFixed(2)}
+                    ${transaction.type === 'income' ? '+' : '-'}$${transaction.amount.toFixed(2)}
                 </div>
                 <div class="transaction-actions">
                     <button class="btn-danger btn-small" onclick="deleteTransaction(${transaction.id})">
@@ -306,7 +306,7 @@ function generateCategoryChart() {
             <div class="category-item">
                 <div class="category-info">
                     <span class="category-name">${category}</span>
-                    <span class="category-amount">$Rs{amount.toFixed(2)} (${percentage}%)</span>
+                    <span class="category-amount">$${amount.toFixed(2)} (${percentage}%)</span>
                 </div>
                 <div class="category-bar" style="width: ${barWidth}%"></div>
             </div>
@@ -349,9 +349,9 @@ function generateMonthlyTrends() {
             <div class="trend-item">
                 <div class="trend-month">${formatMonth(month)}</div>
                 <div class="trend-amounts">
-                    <span class="trend-income">Income: $Rs{data.income.toFixed(2)}</span>
-                    <span class="trend-expense">Expenses: $Rs{data.expenses.toFixed(2)}</span>
-                    <span class="trend-balance ${balanceClass}">Balance: $Rs{balance.toFixed(2)}</span>
+                    <span class="trend-income">Income: $${data.income.toFixed(2)}</span>
+                    <span class="trend-expense">Expenses: $${data.expenses.toFixed(2)}</span>
+                    <span class="trend-balance ${balanceClass}">Balance: $${balance.toFixed(2)}</span>
                 </div>
             </div>
         `;
